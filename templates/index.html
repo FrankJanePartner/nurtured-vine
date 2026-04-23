@@ -1,0 +1,579 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurtured Vine</title>
+  <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+  <link rel="shortcut icon" href="{% static 'core/asset/logo.png' %}" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="{% url 'index' %}">
+    <img src="{% static 'core/asset/logo.png' %}">
+  </a>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'thelightcamp' %}">Light Camp</a></li>
+      <li><a href="{% url 'gallery' %}">Gallery</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      <li><a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank">Volunteer</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <a href="{% url 'donate' %}" class="btn header-donate">
+    <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+      <path d="M12 21s-6.716-4.35-10-9c-2.5-3.5.5-8 5-8 2.5 0 4 1.5 5 3 1-1.5 2.5-3 5-3 4.5 0 7.5 4.5 5 8-3.284 4.65-10 9-10 9z"/>
+    </svg>
+    Donate
+  </a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div style="text-align:right; font-size:24px; cursor:pointer;" onclick="toggleMenu()">✕</div>
+  <a href="{% url 'index' %}">Home</a>
+  <a href="{% url 'about' %}">About</a>
+  <a href="{% url 'thelightcamp' %}">Light Camp</a>
+  <a href="{% url 'gallery' %}">Gallery</a>
+  <a href="{% url 'register' %}">Register</a>
+  <a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank">Volunteer</a>
+  <a href="{% url 'contact' %}">Contact</a>
+
+  <a href="{% url 'donate' %}" class="btn donate">
+    <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+      <path d="M12 21s-6.716-4.35-10-9c-2.5-3.5.5-8 5-8 2.5 0 4 1.5 5 3 1-1.5 2.5-3 5-3 4.5 0 7.5 4.5 5 8-3.284 4.65-10 9-10 9z"/>
+    </svg>
+    Donate
+  </a>
+</div>
+
+<section class="hero">
+
+  <div class="slide active" style="background-image:url('{% static 'core/asset/home-section/eight.JPG' %}');">
+    <div class="overlay"></div>
+    <div class="content">
+      <span class="spanie">Rooted in Christ, Transforming the World</span>
+      <h1>Nurturing Identities, <span>Transforming</span> Generations</h1>
+      <p>A Christ-centered developmental organization raising spiritually grounded and intellectually equipped young people, while equipping parents and mentors.</p>
+      <div class="actions">
+        <a href="{% url 'thelightcamp' %}" class="primary">Light Camp →</a>
+        <a href="{% url 'about' %}" class="secondary">
+          ▶ Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('{% static 'core/asset/home-section/light-83.jpg' %}');">
+    <div class="overlay"></div>
+    <div class="content">
+      <span class="spanie">The Light Camp — Our Flagship Program</span>
+      <h1>Ignite Faith, <span>Build Character</span></h1>
+      <p>An immersive camp experience where young people encounter God, discover purpose, and build lifelong community.</p>
+      <div class="actions">
+        <a href="{% url 'thelightcamp' %}" class="primary">Light Camp →</a>
+        <a href="{% url 'about' %}" class="secondary">
+          ▶ Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('{% static 'core/asset/home-section/light-92.jpg' %}');">
+    <div class="overlay"></div>
+    <div class="content">
+      <span class="spanie">Growing Together</span>
+      <h1>Worship, Fellowship, <span>Transformation</span></h1>
+      <p>Join a community of young people united in faith, growing together in love and purpose.</p>
+      <div class="actions">
+        <a href="{% url 'thelightcamp' %}" class="primary">Light Camp →</a>
+        <a href="{% url 'about' %}" class="secondary">
+          ▶ Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('{% static 'core/asset/home-section/light-42.jpg' %}');">
+    <div class="overlay"></div>
+    <div class="content">
+      <span class="spanie">Serve With Purpose</span>
+      <h1>Make an Impact <span>Volunteer Today</span></h1>
+      <p>Use your gifts and talents to impact young lives. Be part of a mission that transforms generations.</p>
+    <div class="actions">
+        <a href="{% url 'thelightcamp' %}" class="primary">Light Camp→</a>
+        <a href="{% url 'about' %}" class="secondary">
+          ▶ Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+<div style="position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--cream), transparent);"></div>
+</section>
+
+<!-- about section start -->
+<section class="bg-[#f6f3ee] py-16 px-6 md:px-12 lg:px-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+    <!-- LEFT IMAGE -->
+    <div class="relative reveal">
+      
+      <!-- background shape -->
+      <div class="absolute -top-6 -left-6 w-32 h-32 bg-green-100 rounded-2xl opacity-40"></div>
+
+      <!-- main image -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+        <img 
+          src="{% static 'core/asset/about.jpg' %}" 
+          alt="Vine Illustration"
+          class="w-full h-full object-cover transform transition duration-700 group-hover:scale-110"
+        />
+
+        <!-- gradient fade -->
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#f6f3ee] to-transparent"></div>
+      </div>
+
+      <!-- bottom accent -->
+      <!-- <div style="border: 3px solid red;" class="absolute -bottom-6 right-10 w-28 h-28 bg-[#e6dccb] rounded-2xl"></div> -->
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="reveal">
+      <p class="text-sm tracking-widest text-green-700 font-semibold mb-4">
+        ABOUT US
+      </p>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold leading-tight mb-6">
+        Raising a Generation Rooted in 
+        <span class="text-green-700 italic">Purpose</span>
+      </h2>
+
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Nurtured Vine Ministries is a Christ-centered developmental organization 
+        focused on raising spiritually grounded and intellectually equipped young 
+        people aged 0–25.
+      </p>
+
+      <p class="text-gray-600 mb-8 leading-relaxed">
+        We also equip parents, mentors, and caregivers with the tools and wisdom 
+        needed to nurture the next generation into their God-given identities 
+        and callings.
+      </p>
+
+      <!-- BUTTON -->
+      <a href="about.html">
+        <button class="group flex items-center gap-2 border border-gray-300 px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-green-700 hover:text-white hover:border-green-700 hover:shadow-md active:scale-95">
+        Read Our Full Story
+        <span class="transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
+      </button>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- about section end -->
+
+<!-- vision and mission start-->
+ <section class="bg-[#2f6b4f] py-16 px-6 md:px-12 lg:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- CARD 1 -->
+    <div class="group bg-[#3d7a5a] p-8 rounded-2xl border border-white/10 
+                transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2">
+
+      <!-- ICON -->
+      <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#6f8f63] mb-6 animate-blink">
+        <!-- Eye Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="w-7 h-7 text-white"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M2.458 12C3.732 7.943 7.523 5 12 5
+               c4.477 0 8.268 2.943 9.542 7
+               -1.274 4.057-5.065 7-9.542 7
+               -4.477 0-8.268-2.943-9.542-7z"/>
+        </svg>
+      </div>
+
+      <h3 class="text-white text-2xl font-serif font-semibold mb-4">
+        Our Vision
+      </h3>
+
+      <p class="text-white/80 leading-relaxed">
+        To see a generation of young people who are deeply rooted in their identity in Christ, 
+        walking in purpose, and transforming their world through faith, knowledge, and service.
+      </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="group bg-[#3d7a5a] p-8 rounded-2xl border border-white/10 
+                transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-2">
+
+      <!-- ICON -->
+      <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#6f8f63] mb-6 animate-blink">
+        <!-- Target Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="w-7 h-7 text-white"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="5" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <h3 class="text-white text-2xl font-serif font-semibold mb-4">
+        Our Mission
+      </h3>
+
+      <p class="text-white/80 leading-relaxed">
+        To nurture and develop young people spiritually, intellectually, and socially through 
+        Christ-centered programs, mentorship, and community, while equipping parents and 
+        caregivers to raise the next generation with intentionality and purpose.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- vision and mission end-->
+
+<!-- our communities start -->
+<section class="bg-[#f6f3ee] py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
+  
+  <!-- HEADER -->
+  <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+    <p class="text-sm tracking-widest text-green-700 font-semibold mb-4">
+      OUR COMMUNITIES
+    </p>
+
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold mb-4">
+      Growing Together in Faith
+    </h2>
+
+    <p class="text-gray-600">
+      Two vibrant communities united by one mission — nurturing identities and 
+      transforming generations.
+    </p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- CARD 1 -->
+    <div class="group fade-up bg-white p-8 rounded-2xl border border-gray-200 
+                transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:border-green-200">
+
+      <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#f3e8d8]  animate-pulse-slow">
+        <!-- Sparkle Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#caa75e]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M12 3l1.5 3 3 .5-2.25 2.25.5 3L12 10.5 9.25 11.75l.5-3L7.5 6.5l3-.5L12 3z"/>
+        </svg>
+      </div> <br>
+
+      <h3 class="text-xl font-serif font-semibold mb-3">
+        Light 25 Community
+      </h3>
+
+      <p class="text-gray-600 leading-relaxed">
+        A vibrant community of young people aged 0–25, united in faith and purpose. 
+        Through mentorship, fellowship, and discipleship, we help young people 
+        discover and walk in their God-given identity.
+      </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="group fade-up bg-white p-8 rounded-2xl border border-gray-200 
+                transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:border-green-200">
+
+      <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#e3efe7] mb-6 animate-pulse-slow">
+        <!-- Users Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M17 20h5v-1a4 4 0 00-5-3.87M9 20H4v-1a4 4 0 015-3.87m8-4a4 4 0 11-8 0 4 4 0 018 0zm6 0a4 4 0 01-3 3.87M6 10a4 4 0 003 3.87"/>
+        </svg>
+      </div>
+
+      <h3 class="text-xl font-serif font-semibold mb-3">
+        Nurturers Community
+      </h3>
+
+      <p class="text-gray-600 leading-relaxed">
+        A supportive network for parents, mentors, and caregivers dedicated to raising 
+        the next generation. We provide resources, training, and community to equip 
+        nurturers for the journey.
+      </p>
+
+      <a href="https://chat.whatsapp.com/FwUD39Ry0vIBefKnil59xd?mode=gi_t" target="_blank" style="margin-top: 20px;" class="program-btn outline">Join Now →</a>
+    </div>
+
+  </div>
+</section>
+<!-- our communities start end -->
+
+<!-- Our Program Start -->
+<section class="programs">
+  <div class="container">
+    <p class="subtitle">OUR PROGRAMS</p>
+    <h2 class="title">Transformative Experiences</h2>
+    <p class="description">
+      Intentionally designed programs that shape character, deepen faith, and build lasting community.
+    </p>
+
+    <div class="cards">
+      <!-- Featured Card -->
+      <div class="card featured animate">
+        <div class="icon">
+          <!-- Sun SVG -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <span class="badge">FEATURED PROGRAM</span>
+        <h3>The Light Camp</h3>
+        <p>
+          Our flagship program — an immersive camp experience designed to ignite faith,
+          build character, and equip young people with skills for life.
+        </p>
+
+        <a href="{% url 'thelightcamp' %}" class="program-btn primary">Learn More →</a>
+      </div>
+
+      <!-- Second Card -->
+      <div class="card animate">
+        <div class="icon">
+          <!-- Crown SVG -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M3 7l5 5 4-6 4 6 5-5v10H3V7z"
+              stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div> <br>
+
+        <h3>Nurturers Summit</h3>
+        <p>
+          An annual gathering for parents, mentors, and caregivers featuring workshops,
+          speakers, and fellowship — equipping nurturers with practical wisdom.
+        </p>
+
+        <a class="program-btn outline">Coming Soon </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Program End -->
+
+<!-- Get Involved -->
+<section class="bg-[#f5f3ef] py-10 px-4">
+  <div 
+    class="max-w-5xl mx-auto rounded-3xl bg-[#356c4b] text-white text-center px-8 py-16 relative overflow-hidden transition-all duration-700 opacity-0 translate-y-10"
+    id="cta"
+  >
+
+    <!-- Soft Background Shapes -->
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-white/5 rounded-full"></div>
+    <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-white/5 rounded-full"></div>
+
+    <!-- Content -->
+    <p class="text-xs tracking-[0.2em] text-[#d9a441] mb-4">
+      GET INVOLVED
+    </p>
+
+    <h2 class="text-3xl md:text-5xl font-semibold mb-4 leading-tight">
+      Be Part of Something 
+      <span class="text-[#d9a441] italic font-medium">Greater</span>
+    </h2>
+
+    <p class="max-w-2xl mx-auto text-white/80 mb-8 text-sm md:text-base leading-relaxed">
+      Whether you want to register for Light Camp, volunteer your time and skills,
+      or support with a donation — there's a place for you in this mission.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-4">
+
+      <!-- Primary -->
+      <a href="/register.html"
+        class="inline-flex items-center gap-2 bg-[#d9a441] hover:bg-[#c89332] text-white px-6 py-3 rounded-full text-sm transition-all duration-300 hover:-translate-y-1"
+      >
+        Register for Camp
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+
+      <!-- Secondary -->
+      <a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank"
+        class="px-6 py-3 rounded-full border border-white/40 text-white text-sm hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+      >
+        Volunteer
+      </a>
+
+      <!-- Secondary -->
+      <a href="/donate.html"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/40 text-white text-sm hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M12 21s-7-4.35-9-8.5C1 8 4 5 7 5c2 0 3 1 5 3 2-2 3-3 5-3 3 0 6 3 4 7.5C19 16.65 12 21 12 21z"/>
+        </svg>
+        Donate
+      </a>
+
+    </div>
+  </div>
+</section>
+<!-- Get Involved End -->
+
+<!-- Footer Start -->
+<footer class="bg-[#1f2f28] text-white pt-16 pb-8 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="footer_logo">
+            <img src="{% static 'core/asset/logo.png' %}" alt="Nurtured Vine Logo" class="w-24">
+          </div>
+        </div>
+
+        <p class="text-sm text-white/70 leading-relaxed max-w-xs">
+          Nurturing Identities, Transforming Generations. Rooted in Christ,
+          Transforming the World.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+          <li><a href="thelightcamp.html" class="hover:text-white transition">Light Camp</a></li>
+          <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>
+          <li><a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank" class="hover:text-white transition">Volunteer</a></li>
+          <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div>
+        <h4 class="font-semibold mb-4">Programs</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white transition">The Light Camp</a></li>
+          <li><a class="hover:text-white transition">Nurturers Summit</a></li>
+          <li><a class="hover:text-white transition">Light 25 Community</a></li>
+          <li><a class="hover:text-white transition">Nurturers Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+
+        <ul class="space-y-3 text-sm text-white/70">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z"/>
+              <path d="M22 6l-10 7L2 6"/>
+            </svg>
+            info@nurturedvine.org
+          </li>
+
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.89.37 1.75.73 2.55a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 5 5l1.62-1.37a2 2 0 0 1 2.11-.45c.8.36 1.66.61 2.55.73a2 2 0 0 1 1.72 2z"/>
+            </svg>
+            +234 703 956 3762
+          </li>
+
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z"/>
+              <circle cx="12" cy="11" r="2"/>
+            </svg>
+            Lagos, Nigeria
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ✅ Social Media Row -->
+    <div class="mt-12 flex justify-center gap-4">
+      <a href="https://www.facebook.com/share/1CbhoZ1e39/" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.instagram.com/nurturedvineministries?igsh=MXcwaDBoM3BnM3g4dg==" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17" cy="7" r="1.5"/>
+        </svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@lightcampglobal?_r=1&_t=ZS-95XHobwbUur" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 3v10.5a4.5 4.5 0 1 1-4.5-4.5" />
+          <path d="M14 3c1.5 2.5 3.5 3.5 6 3.5" />
+        </svg>
+      </a>
+
+      <a href="https://youtube.com/@thenurturedvineministries?si=c_urmYxF0VRnpWzr" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M22 12s0-4-1-6c-1-1-6-1-9-1s-8 0-9 1c-1 2-1 6-1 6s0 4 1 6c1 1 6 1 9 1s8 0 9-1c1-2 1-6 1-6z"/>
+          <polygon points="10 15 15 12 10 9 10 15"/>
+        </svg>
+      </a>
+
+      <!-- WhatsApp (NEW) -->
+      <a href="https://whatsapp.com/channel/0029VbCazs14IBhHDxgaRd2F" class="social-icon text-gray-400 hover:text-green-500 transition duration-300 transform hover:scale-110">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M20.52 3.48A11.8 11.8 0 0012.05 0C5.54 0 .2 5.34.2 11.86c0 2.09.55 4.13 1.6 5.92L0 24l6.36-1.67a11.8 11.8 0 005.69 1.45h.01c6.51 0 11.85-5.34 11.85-11.86
+            0-3.17-1.23-6.15-3.39-8.44zM12.06 21.3a9.4 9.4 0 01-4.8-1.32l-.34-.2-3.78.99 1.01-3.68-.22-.38a9.3 9.3 0 01-1.43-5c0-5.16 4.2-9.36 9.37-9.36
+            2.5 0 4.85.97 6.62 2.74a9.3 9.3 0 012.75 6.62c0 5.17-4.2 9.37-9.37 9.37zm5.16-7.02c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14
+            -.19.28-.73.91-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.4-1.67-1.56-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49
+            .14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.49.07-.75.35-.26.28-1 1-1 2.44
+            0 1.44 1.02 2.84 1.16 3.03.14.19 2 3.06 4.84 4.29.68.29 1.2.46 1.61.59.68.22 1.3.19 1.79.11.55-.08 1.66-.68 1.9-1.33.23-.65.23-1.21.16-1.33
+            -.07-.12-.26-.19-.54-.33z"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/60 gap-4">
+
+      <p>© 2026 Nurtured Vine Ministries. All rights reserved.</p>
+
+    </div>
+
+  </div>
+</footer>
+<!-- Footer End -->
+
+<script src="{% static 'core/js/app.js' %}"></script>
+
+</body>
+</html>

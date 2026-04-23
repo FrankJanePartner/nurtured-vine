@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurtured Vine</title>
+    <link rel="stylesheet" href="{% static 'core/css/contact.css' %}">
+    <link rel="shortcut icon" href="{% static 'core/asset/logo.png' %}" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="{% url 'index' %}">
+      <img src="{% static 'core/asset/logo.png' %}">
+    </a>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'thelightcamp' %}">Light Camp</a></li>
+      <li><a href="{% url 'gallery' %}">Gallery</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      <li><a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank">Volunteer</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <a href="{% url 'donate' %}" class="btn header-donate">
+    <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+      <path d="M12 21s-6.716-4.35-10-9c-2.5-3.5.5-8 5-8 2.5 0 4 1.5 5 3 1-1.5 2.5-3 5-3 4.5 0 7.5 4.5 5 8-3.284 4.65-10 9-10 9z"/>
+    </svg>
+    Donate
+  </a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div style="text-align:right; font-size:24px; cursor:pointer;" onclick="toggleMenu()">✕</div>
+  <a href="{% url 'index' %}">Home</a>
+  <a href="{% url 'about' %}">About</a>
+  <a href="{% url 'thelightcamp' %}">Light Camp</a>
+  <a href="{% url 'gallery' %}">Gallery</a>
+  <a href="{% url 'register' %}">Register</a>
+  <a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank">Volunteer</a>
+  <a href=" {% url 'contact' %}">Contact</a>
+
+  <a href="{% url 'donate' %}" class="btn donate">
+    <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+      <path d="M12 21s-6.716-4.35-10-9c-2.5-3.5.5-8 5-8 2.5 0 4 1.5 5 3 1-1.5 2.5-3 5-3 4.5 0 7.5 4.5 5 8-3.284 4.65-10 9-10 9z"/>
+    </svg>
+    Donate
+  </a>
+</div>
+
+<!-- ABOUT SECTION -->
+<section class="bg-[#2f6b4f] text-white py-16 mt-16 px-6 md:px-12 lg:px-20 overflow-hidden">
+
+  <div class="max-w-5xl mx-auto space-y-6">
+    <p class="text-sm tracking-widest text-yellow-400 uppercase animate-fade-in">
+      Contact
+    </p>
+
+    <h2 class="text-3xl md:text-5xl font-bold leading-tight animate-slide-up">
+      Get in  
+      <span class="text-yellow-400 italic font-semibold">Touch</span>
+    </h2>
+
+    <p class="text-gray-200 max-w-3xl text-base md:text-lg animate-fade-in delay-200">
+      We'd love to hear from you. Reach out with <br> questions, partnerships, or just to say hello.
+    </p>
+  </div>
+
+</section>
+<!-- ABOUT SECTION END -->
+
+<!-- CONTACT INFORMATION -->
+<section class="bg-[#f7f5f2] py-20 px-4">
+
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+
+    <!-- ================= LEFT SIDE ================= -->
+    <div class="animate-fade-up">
+
+      <p class="text-xs tracking-widest text-green-700 uppercase mb-3">
+        We're here for you
+      </p>
+
+      <h2 class="text-3xl md:text-4xl font-serif font-semibold text-gray-900 mb-4 leading-tight">
+        Let's Start a 
+        <span class="text-yellow-500 italic">Conversation</span>
+      </h2>
+
+      <p class="text-gray-600 mb-8">
+        Whether you're a parent looking to register your child, a potential volunteer, 
+        a ministry partner, or someone who simply wants to know more — our team is here 
+        and ready to help.
+      </p>
+
+      <!-- Partnership Card -->
+      <div class="relative bg-green-800 text-white rounded-2xl p-6 overflow-hidden">
+
+        <!-- Background Shape -->
+        <div class="absolute bottom-0 left-0 w-24 h-24 bg-green-700 rounded-full opacity-40 blur-xl"></div>
+
+        <div class="relative z-10 flex items-start gap-4">
+
+          <!-- SVG Icon -->
+          <div class=" flex items-center justify-center rounded-full bg-green-700">
+            <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" d="M12 21s-6-4.35-9-8.5A5.5 5.5 0 0112 5a5.5 5.5 0 019 7.5C18 16.65 12 21 12 21z"/>
+            </svg>
+          </div>
+
+          <div>
+            <h3 class="font-semibold mb-1">Partnership Enquiries</h3>
+
+            <p class="text-sm text-green-100 mb-3">
+              Interested in partnering with us? We'd love to connect with churches,
+              organizations and individuals who share our vision.
+            </p>
+
+            <p class="text-yellow-400 text-sm font-medium">
+              partners@nurturedvine.org
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= RIGHT SIDE (FORM) ================= -->
+    <div class="bg-white rounded-2xl shadow-sm border overflow-hidden animate-fade-up delay-200">
+
+      <!-- Form Header -->
+      <div class="bg-green-800 text-white p-6">
+        <h3 class="font-semibold text-lg">Send us a Message</h3>
+        <p class="text-sm text-green-100">
+          Fill out the form and we'll be in touch soon.
+        </p>
+      </div>
+
+      <!-- Form -->
+      {% if messages %}
+      <div class="mb-4">
+        {% for message in messages %}
+        <div class="p-4 rounded-lg bg-green-100 text-green-800 text-sm font-medium">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <form method="POST" action="{% url 'contact' %}" class="p-6 space-y-5">
+        {% csrf_token %}
+
+        <!-- Row -->
+        <div class="grid sm:grid-cols-2 gap-4">
+
+          <div>
+            <label class="text-sm text-gray-600">Full Name *</label>
+            <input type="text" name="full_name" required placeholder="Your full name"
+              class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-700 outline-none"/>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-600">Email *</label>
+            <input type="email" name="email" required placeholder="your@email.com"
+              class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-700 outline-none"/>
+          </div>
+
+        </div>
+
+        <!-- Phone Number -->
+        <div>
+          <label class="text-sm text-gray-600">Phone Number *</label>
+          <input type="text" name="phone_number" required placeholder="Your phone number"
+            class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-700 outline-none"/>
+        </div>
+
+        <!-- Subject -->
+        <div>
+          <label class="text-sm text-gray-600">Subject</label>
+          <input type="text" name="subject" placeholder="What is this about?"
+            class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-700 outline-none"/>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label class="text-sm text-gray-600">Message *</label>
+          <textarea name="message" rows="4" required placeholder="Tell us what's on your heart..."
+            class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-700 outline-none"></textarea>
+        </div>
+
+        <!-- Button -->
+        <button type="submit"
+          class="w-full flex items-center justify-center gap-2 bg-green-800 hover:bg-green-900 text-white py-3 rounded-lg transition">
+
+          <!-- SVG Send Icon -->
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" d="M22 2L11 13"/>
+            <path stroke-width="2" d="M22 2L15 22L11 13L2 9L22 2Z"/>
+          </svg>
+
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- CONTACT INFORMATION -->
+<!-- Footer Start -->
+<footer class="bg-[#1f2f28] text-white pt-16 pb-8 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="footer_logo">
+            <img src="{% static 'core/asset/logo.png' %}" alt="Nurtured Vine Logo" class="w-24">
+          </div>
+        </div>
+
+        <p class="text-sm text-white/70 leading-relaxed max-w-xs">
+          Nurturing Identities, Transforming Generations. Rooted in Christ,
+          Transforming the World.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="{% url 'index' %}" class="hover:text-white transition">Home</a></li>
+          <li><a href="{% url 'about' %}" class="hover:text-white transition">About Us</a></li>
+          <li><a href="{% url 'thelightcamp' %}" class="hover:text-white transition">Light Camp</a></li>
+          <li><a href="{% url 'gallery' %}" class="hover:text-white transition">Gallery</a></li>
+          <li><a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank" class="hover:text-white transition">Volunteer</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div>
+        <h4 class="font-semibold mb-4">Programs</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a class="hover:text-white transition">The Light Camp</a></li>
+          <li><a class="hover:text-white transition">Nurturers Summit</a></li>
+          <li><a class="hover:text-white transition">Light 25 Community</a></li>
+          <li><a class="hover:text-white transition">Nurturers Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+
+        <ul class="space-y-3 text-sm text-white/70">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z"/>
+              <path d="M22 6l-10 7L2 6"/>
+            </svg>
+            info@nurturedvine.org
+          </li>
+
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.89.37 1.75.73 2.55a2 2 0 0 1-.45 2.11L10 11a16 16 0 0 0 5 5l1.62-1.37a2 2 0 0 1 2.11-.45c.8.36 1.66.61 2.55.73a2 2 0 0 1 1.72 2z"/>
+            </svg>
+            +234 703 956 3762
+          </li>
+
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10z"/>
+              <circle cx="12" cy="11" r="2"/>
+            </svg>
+            Lagos, Nigeria
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ✅ Social Media Row -->
+    <div class="mt-12 flex justify-center gap-4">
+      <a href="https://www.facebook.com/share/1CbhoZ1e39/" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.instagram.com/nurturedvineministries?igsh=MXcwaDBoM3BnM3g4dg==" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17" cy="7" r="1.5"/>
+        </svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@lightcampglobal?_r=1&_t=ZS-95XHobwbUur" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 3v10.5a4.5 4.5 0 1 1-4.5-4.5" />
+          <path d="M14 3c1.5 2.5 3.5 3.5 6 3.5" />
+        </svg>
+      </a>
+
+      <a href="https://youtube.com/@thenurturedvineministries?si=c_urmYxF0VRnpWzr" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M22 12s0-4-1-6c-1-1-6-1-9-1s-8 0-9 1c-1 2-1 6-1 6s0 4 1 6c1 1 6 1 9 1s8 0 9-1c1-2 1-6 1-6z"/>
+          <polygon points="10 15 15 12 10 9 10 15"/>
+        </svg>
+      </a>
+
+      <!-- WhatsApp (NEW) -->
+      <a href="https://whatsapp.com/channel/0029VbCazs14IBhHDxgaRd2F" class="social-icon text-gray-400 hover:text-green-500 transition duration-300 transform hover:scale-110">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M20.52 3.48A11.8 11.8 0 0012.05 0C5.54 0 .2 5.34.2 11.86c0 2.09.55 4.13 1.6 5.92L0 24l6.36-1.67a11.8 11.8 0 005.69 1.45h.01c6.51 0 11.85-5.34 11.85-11.86
+            0-3.17-1.23-6.15-3.39-8.44zM12.06 21.3a9.4 9.4 0 01-4.8-1.32l-.34-.2-3.78.99 1.01-3.68-.22-.38a9.3 9.3 0 01-1.43-5c0-5.16 4.2-9.36 9.37-9.36
+            2.5 0 4.85.97 6.62 2.74a9.3 9.3 0 012.75 6.62c0 5.17-4.2 9.37-9.37 9.37zm5.16-7.02c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14
+            -.19.28-.73.91-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.4-1.67-1.56-1.95-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49
+            .14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.49.07-.75.35-.26.28-1 1-1 2.44
+            0 1.44 1.02 2.84 1.16 3.03.14.19 2 3.06 4.84 4.29.68.29 1.2.46 1.61.59.68.22 1.3.19 1.79.11.55-.08 1.66-.68 1.9-1.33.23-.65.23-1.21.16-1.33
+            -.07-.12-.26-.19-.54-.33z"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/60 gap-4">
+
+      <p>© 2026 Nurtured Vine Ministries. All rights reserved.</p>
+
+    </div>
+
+  </div>
+</footer>
+
+<!-- Footer End -->
+
+<script src="{% static 'core/js/contact.js' %}"></script>
+</body>
+</html>
