@@ -1,31 +1,36 @@
 """
 Admin configuration for the core app of Nurtured Vine.
 """
-from django.contrib import admin
-from .models import CampRegistration, ContactMessage
-from django.http import HttpResponse
 import csv
+
+from django.contrib import admin
+from django.http import HttpResponse
+
+from .models import CampRegistration, ContactMessage
 
 @admin.register(CampRegistration)
 class CampRegistrationAdmin(admin.ModelAdmin):
     """Admin interface for CampRegistration model."""
-    list_display = ('full_name', 'email', 'age', 'participant_phone', 'created_at')
+    list_display = (
+        'full_name', 'email', 'age', 'participant_phone',
+        'participant_location', 'created_at'
+    )
     search_fields = ('full_name', 'email', 'participant_phone')
     list_filter = ('gender', 'created_at')
-    
+
     model = CampRegistration
     actions = ['export_as_csv']
     # Fields to display in admin form
     fields = [
         'full_name', 'email', 'age', 'participant_phone',
-        'gender', 'address', 'interests',
-        'challenge', 'created_at'
+        'participant_location', 'gender', 'parent_name',
+        'parent_phone', 'parent_location', 'church_name',
+        'medical_info', 'consent', 'created_at'
     ]
+    readonly_fields = ('created_at',)
 
-    # Fields to display in admin list view
-    list_display = fields
-
-    def export_as_csv(self, request, queryset):
+    def export_as_csv(self, _request, queryset):
+        """Export selected registrations as a CSV file."""
         fieldnames = self.fields  # Use only selected fields
 
         response = HttpResponse(content_type='text/csv')
