@@ -170,7 +170,7 @@
       </p>
 
       <!-- BUTTON -->
-      <a href="about.html">
+      <a href="{% url 'about' %}">
         <button class="group flex items-center gap-2 border border-gray-300 px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-green-700 hover:text-white hover:border-green-700 hover:shadow-md active:scale-95">
         Read Our Full Story
         <span class="transition-transform duration-300 group-hover:translate-x-1">
@@ -407,7 +407,7 @@
     <div class="flex flex-wrap justify-center gap-4">
 
       <!-- Primary -->
-      <a href="/register.html"
+      <a href="{% url 'register' %}"
         class="inline-flex items-center gap-2 bg-[#d9a441] hover:bg-[#c89332] text-white px-6 py-3 rounded-full text-sm transition-all duration-300 hover:-translate-y-1"
       >
         Register for Camp
@@ -425,7 +425,7 @@
       </a>
 
       <!-- Secondary -->
-      <a href="/donate.html"
+      <a href="{% url 'donate' %}"
         class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/40 text-white text-sm hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
@@ -465,12 +465,12 @@
       <div>
         <h4 class="font-semibold mb-4">Quick Links</h4>
         <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
-          <li><a href="thelightcamp.html" class="hover:text-white transition">Light Camp</a></li>
-          <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>
+          <li><a href="{% url 'index' %}" class="hover:text-white transition">Home</a></li>
+          <li><a href="{% url 'about' %}" class="hover:text-white transition">About Us</a></li>
+          <li><a href="{% url 'thelightcamp' %}" class="hover:text-white transition">Light Camp</a></li>
+          <li><a href="{% url 'gallery' %}" class="hover:text-white transition">Gallery</a></li>
           <li><a href="https://chat.whatsapp.com/CRbRdyQSMuL3zRptkj7sG6?mode=gi_t" target="_blank" class="hover:text-white transition">Volunteer</a></li>
-          <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-white transition">Contact</a></li>
         </ul>
       </div>
 
